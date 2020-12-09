@@ -3,6 +3,7 @@ import sys
 def get_passwords(filename):
     file = open(filename, "r")
     passwords = [pw for pw in file.readlines()]
+    file.close()
     return passwords
 
 def password_parse(password_rule):

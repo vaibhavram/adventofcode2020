@@ -3,6 +3,7 @@ import sys
 def get_int_set(filename):
     file = open(filename, "r")
     value_set = set([int(s) for s in file.readlines()])
+    file.close()
     return(value_set)
 
 def pair_product(value_set, tot):

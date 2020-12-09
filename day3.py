@@ -3,6 +3,7 @@ import sys
 def get_mountain(filename):
     file = open(filename, "r")
     mountain = [row[0:(len(row)-1)] for row in file.readlines()]
+    file.close()
     return mountain
 
 def count_trees(mountain, across, down):
