@@ -63,7 +63,6 @@ def get_ultimate_parents(bag):
     else:
         return_set = set()
         for parent in bag.get_parents():
-            # print(parent.name, "-", bag.name)
             return_set.add(parent.name)
             return_set = return_set.union(get_ultimate_parents(parent))
         return return_set
