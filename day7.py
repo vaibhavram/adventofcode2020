@@ -75,9 +75,7 @@ def get_num_content_bags(bag):
     if bag.num_contents() == 0:
         return 0
     else:
-        return \
-        sum([bag.num_content_bag(content_bag) for content_bag in bag.get_content_bags()]) + \
-        sum([bag.num_content_bag(content_bag) * get_num_content_bags(content_bag) for content_bag in bag.get_content_bags()])
+        return sum([bag.num_content_bag(content_bag) * (1 + get_num_content_bags(content_bag)) for content_bag in bag.get_content_bags()])
 
 def main(filename):
     bags = get_bags(filename)
